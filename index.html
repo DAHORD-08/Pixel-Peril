@@ -777,7 +777,7 @@
         </div>
 
         <div class="footer-text">
-            © 2024 <span>PIXEL PÉRIL</span><br>
+            © 2026 <span>PIXEL PÉRIL</span><br>
             Créé avec <span>GODOT ENGINE</span><br>
             Jeu indépendant développé avec passion ♥
         </div>
@@ -803,22 +803,24 @@
         document.getElementById('downloadWindows').addEventListener('click', function(e) {
             e.preventDefault();
             // Remplace par ton lien de téléchargement
-            const downloadUrl = 'pixel_peril_windows.zip';
+            const downloadUrl = './windows-download/pixel-peril.exe';
             
             if (confirm('▼ TÉLÉCHARGER PIXEL PÉRIL POUR WINDOWS ?')) {
-                // window.location.href = downloadUrl;
-                alert('⚠ Configurez le lien de téléchargement Windows dans le code');
+                if (confirm('⚠ Voulez vous vraiment télécharger la version Windows ?')) {
+                    window.location.href = downloadUrl;
+                }
             }
         });
 
         document.getElementById('downloadAndroid').addEventListener('click', function(e) {
             e.preventDefault();
             // Remplace par ton lien de téléchargement
-            const downloadUrl = 'pixel_peril.apk';
+            const downloadUrl = './android-download/pixel-peril.apk';
             
             if (confirm('▼ TÉLÉCHARGER PIXEL PÉRIL POUR ANDROID ?')) {
-                // window.location.href = downloadUrl;
-                alert('⚠ Configurez le lien de téléchargement Android dans le code');
+                if (confirm('⚠ Voulez vous vraiment télécharger la version Android ?\nCe fichier APK est sûr et signé :\n/android-download/pixel-peril.apk.idsign')) {
+                    window.location.href = downloadUrl;
+                }
             }
         });
 
