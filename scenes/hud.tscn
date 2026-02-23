@@ -1,0 +1,341 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxsfo65mguvhi"]
+
+[ext_resource type="FontFile" uid="uid://b3p0ank85pqgp" path="res://fonts/Pixeled.ttf" id="1_645bj"]
+[ext_resource type="Script" path="res://hud.gd" id="1_qwihu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqh4a"]
+bg_color = Color(0, 0, 0, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfsbi"]
+bg_color = Color(0, 0, 0, 0.784314)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_qwihu")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -324.5
+offset_right = 26.0
+offset_bottom = -177.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_645bj")
+theme_override_font_sizes/font_size = 52
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -225.0
+offset_right = 240.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -35
+theme_override_fonts/font = ExtResource("1_645bj")
+theme_override_font_sizes/font_size = 36
+text = "DODGE THE ENEMIES !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -404.0
+offset_right = 110.0
+offset_bottom = -304.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_645bj")
+theme_override_font_sizes/font_size = 30
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "▶ START "
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="MainMenu" type="Control" parent="."]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HighScoreLabel" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = -288.0
+offset_right = 130.0
+offset_bottom = -225.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_645bj")
+theme_override_font_sizes/font_size = 22
+text = "BEST SCORE : 0"
+
+[node name="SettingsButton" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = 226.0
+offset_right = 126.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_645bj")
+theme_override_font_sizes/font_size = 20
+text = "⚙ SETTINGS"
+
+[node name="CreditsButton" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 303.0
+offset_right = 88.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_645bj")
+theme_override_font_sizes/font_size = 20
+text = "ℹ CREDENTIALS"
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(400, 325)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -200.0
+offset_right = 225.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jqh4a")
+
+[node name="Label" type="Label" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 10.0
+offset_right = 76.5
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseSettings" type="Button" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -65.0
+offset_right = 50.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 28
+text = "CLOSE"
+
+[node name="Label2" type="Label" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -87.0
+offset_right = 25.5
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel"]
+texture_filter = 1
+custom_minimum_size = Vector2(125, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -53.0
+offset_right = 12.5
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Label3" type="Label" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = 9.5
+offset_right = 24.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = 50.0
+offset_right = 12.5
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 1.0
+step = 0.1
+value = 0.8
+
+[node name="CreditsPanel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(400, 325)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -200.0
+offset_right = 225.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tfsbi")
+
+[node name="Label" type="Label" parent="CreditsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 10.0
+offset_right = 76.5
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "CREDENTIALS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsPanel"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -160.0
+offset_right = 187.5
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]
+PIXEL PERIL is a game made with GODOT ENGINE
+Développed By :
+DAHORD
+@zef (TUTO UNITY FR)
+
+Thanks for Playing !
+[/center]"
+scroll_active = false
+selection_enabled = true
+
+[node name="CloseCredits" type="Button" parent="CreditsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -65.0
+offset_right = 50.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 28
+text = "CLOSE"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="MainMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainMenu/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/CloseSettings" to="." method="_on_close_settings_pressed"]
+[connection signal="value_changed" from="SettingsPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="CreditsPanel/CloseCredits" to="." method="_on_close_settings_pressed"]
+[connection signal="pressed" from="CreditsPanel/CloseCredits" to="." method="_on_close_credits_pressed"]
