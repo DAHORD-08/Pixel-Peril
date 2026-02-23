@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Péril - Jeu d'Arcade Rétro</title>
-    <link rel="icon" href="logo-128x128.ico" type="image/x-icon">
+    <link rel="icon" href="./logo-128x128.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -25,7 +25,6 @@
             image-rendering: crisp-edges;
         }
 
-        /* Scanlines effet CRT */
         body::before {
             content: '';
             position: fixed;
@@ -44,7 +43,6 @@
             z-index: 9999;
         }
 
-        /* Pixel grid background */
         .pixel-bg {
             position: fixed;
             top: 0;
@@ -58,7 +56,6 @@
             z-index: -1;
         }
 
-        /* Header */
         header {
             text-align: center;
             padding: 60px 20px 40px;
@@ -95,7 +92,6 @@
             text-shadow: 2px 2px 0 #004400;
         }
 
-        /* Pixel art divider */
         .divider {
             height: 8px;
             background: linear-gradient(90deg, 
@@ -107,7 +103,6 @@
             margin: 40px 0;
         }
 
-        /* Hero Section */
         .hero {
             padding: 80px 20px;
             position: relative;
@@ -194,7 +189,6 @@
             text-shadow: 2px 2px 0 #004444;
         }
 
-        /* Buttons */
         .download-buttons {
             display: flex;
             flex-direction: column;
@@ -249,7 +243,6 @@
             font-size: 1.5em;
         }
 
-        /* Stats */
         .stats {
             display: flex;
             gap: 30px;
@@ -282,7 +275,6 @@
             color: #00ffff;
         }
 
-        /* Features */
         .features {
             padding: 80px 20px;
             background: #0a0a0a;
@@ -353,7 +345,6 @@
             color: #00ff00;
         }
 
-        /* Screenshots */
         .screenshots {
             padding: 80px 20px;
             background: linear-gradient(180deg, #0a0a0a 0%, #1a0033 100%);
@@ -404,7 +395,6 @@
             border-top: 2px solid #00ffff;
         }
 
-        /* Footer */
         footer {
             background: #000;
             border-top: 4px solid #ff00ff;
@@ -493,7 +483,6 @@
             color: #ff00ff;
         }
 
-        /* Responsive */
         @media (max-width: 968px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -611,7 +600,6 @@
             }
         }
 
-        /* Floating particles */
         .particles {
             position: fixed;
             top: 0;
@@ -653,7 +641,6 @@
     <div class="pixel-bg"></div>
     <div class="particles" id="particles"></div>
 
-    <!-- Header -->
     <header>
         <h1 class="glitch">PIXEL PÉRIL</h1>
         <p class="subtitle">▼ ARCADE SURVIVAL ▼</p>
@@ -661,7 +648,6 @@
 
     <div class="divider"></div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="game-screen">
@@ -711,7 +697,6 @@
 
     <div class="divider"></div>
 
-    <!-- Features -->
     <section class="features">
         <h2>▼ CARACTÉRISTIQUES ▼</h2>
         <div class="features-grid">
@@ -750,7 +735,6 @@
 
     <div class="divider"></div>
 
-    <!-- Screenshots -->
     <section class="screenshots">
         <h2>▼ APERÇUS DU JEU ▼</h2>
         <div class="screenshot-container">
@@ -768,7 +752,6 @@
 
     <div class="divider"></div>
 
-    <!-- Footer -->
     <footer>
         <h3 style="font-size: 1.5em; color: #ff00ff; margin-bottom: 20px;">
             ▼ SUIVEZ-MOI ▼
@@ -778,7 +761,7 @@
             <a href="https://www.snapchat.com/add/killian.lh08" class="social-btn social-snapchat" title="Snapchat" target="_blank">
                 <i class="fab fa-snapchat-ghost"></i>
             </a>
-            <a href="./discord_link.html" class="social-btn social-discord" title="Discord" target="_blank">
+            <a href="https://dahord-08.github.io/discord-link" class="social-btn social-discord" title="Discord" target="_blank">
                 <i class="fab fa-discord"></i>
             </a>
             <a href="https://www.youtube.com/@dahordklh" class="social-btn social-youtube" title="YouTube" target="_blank">
@@ -790,7 +773,7 @@
         </div>
 
         <div class="footer-text">
-            © 2026 Copyright<span>PIXEL PÉRIL</span><br>
+            © 2026 Copyright <span>PIXEL PÉRIL</span><br>
             Créé avec <span>GODOT ENGINE</span> par <span>DAHORD</span><br>
             Jeu indépendant développé avec passion <span style="font-size: 1.5rem;">♥</span>
         </div>
@@ -815,7 +798,7 @@
         // Gestion des téléchargements
         document.getElementById('downloadWindows').addEventListener('click', function(e) {
             e.preventDefault();
-            // Remplace par ton lien de téléchargement
+
             const downloadUrl = './downloads/windows/pixel-peril.exe';
             
             if (confirm('▼ TÉLÉCHARGER PIXEL PÉRIL POUR WINDOWS ?')) {
@@ -827,7 +810,7 @@
 
         document.getElementById('downloadAndroid').addEventListener('click', function(e) {
             e.preventDefault();
-            // Remplace par ton lien de téléchargement
+
             const downloadUrl = './downloads/android/pixel-peril.apk';
             
             if (confirm('▼ TÉLÉCHARGER PIXEL PÉRIL POUR ANDROID ?')) {
