@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Péril - Jeu d'Arcade Rétro</title>
+    <link rel="icon" href="logo-128x128.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -268,12 +269,8 @@
             font-size: 2em;
             color: #00ff00;
             margin-bottom: 10px;
-            min-height: 1.2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        
+
         .stat-number.infinity {
             font-size: 3em;
             margin-bottom: -10px;
@@ -474,6 +471,17 @@
             box-shadow: 0 0 30px #ffffff;
         }
 
+        .social-discord {
+            border-color: #7289da;
+            color: #7289da;
+        }
+
+        .social-discord:hover {
+            background: #7289da;
+            color: #000;
+            box-shadow: 0 0 30px #7289da;
+        }
+
         .footer-text {
             font-size: 0.7em;
             color: #666;
@@ -658,7 +666,9 @@
         <div class="hero-content">
             <div class="game-screen">
                 <div class="pixel-display">
-                    🎮
+                    <video width="100%" height="100%" autoplay loop muted>
+                        <source src="pixel_peril_demo.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
                 </div>
             </div>
 
@@ -671,11 +681,11 @@
                 </p>
 
                 <div class="download-buttons">
-                    <a href="#" class="btn-pixel btn-windows" id="downloadWindows">
+                    <a href="../downloads/windows/pixel-peril.exe" class="btn-pixel btn-windows" id="downloadWindows">
                         <i class="fab fa-windows"></i>
                         <span>TÉLÉCHARGER WINDOWS</span>
                     </a>
-                    <a href="#" class="btn-pixel btn-android" id="downloadAndroid">
+                    <a href="../downloads/android/pixel-peril.apk" class="btn-pixel btn-android" id="downloadAndroid">
                         <i class="fab fa-android"></i>
                         <span>TÉLÉCHARGER ANDROID</span>
                     </a>
@@ -691,7 +701,7 @@
                         <div class="stat-label">LÉGER</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-number infinity">∞</div>
+                        <div class="stat-number infinity">&infin;</div>
                         <div class="stat-label">REJOUABILITÉ</div>
                     </div>
                 </div>
@@ -745,13 +755,13 @@
         <h2>▼ APERÇUS DU JEU ▼</h2>
         <div class="screenshot-container">
             <div class="screenshot-frame" data-label="MENU PRINCIPAL">
-                🎮
+                <img src="./main_menu.png" alt="Menu Principal" style="width:100%; height:100%; object-fit: cover;">
             </div>
             <div class="screenshot-frame" data-label="EN PARTIE">
-                ⚡
+                <img src="./game_play.png" alt="En Partie" style="width:100%; height:100%; object-fit: cover;">
             </div>
             <div class="screenshot-frame" data-label="GAME OVER">
-                💀
+                <img src="./game_over.png" alt="Game Over" style="width:100%; height:100%; object-fit: cover;">
             </div>
         </div>
     </section>
@@ -761,25 +771,28 @@
     <!-- Footer -->
     <footer>
         <h3 style="font-size: 1.5em; color: #ff00ff; margin-bottom: 20px;">
-            ▼ SUIVEZ-NOUS ▼
+            ▼ SUIVEZ-MOI ▼
         </h3>
         
         <div class="social-links">
-            <a href="#" class="social-btn social-snapchat" title="Snapchat">
+            <a href="https://www.snapchat.com/add/killian.lh08" class="social-btn social-snapchat" title="Snapchat" target="_blank">
                 <i class="fab fa-snapchat-ghost"></i>
             </a>
-            <a href="#" class="social-btn social-youtube" title="YouTube">
+            <a href="./discord_link.html" class="social-btn social-discord" title="Discord" target="_blank">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://www.youtube.com/@dahordklh" class="social-btn social-youtube" title="YouTube" target="_blank">
                 <i class="fab fa-youtube"></i>
             </a>
-            <a href="#" class="social-btn social-github" title="GitHub">
+            <a href="https://github.com/DAHORD-08" class="social-btn social-github" title="GitHub" target="_blank">
                 <i class="fab fa-github"></i>
             </a>
         </div>
 
         <div class="footer-text">
-            © 2024 <span>PIXEL PÉRIL</span><br>
-            Créé avec <span>GODOT ENGINE</span><br>
-            Jeu indépendant développé avec passion ♥
+            © 2026 Copyright<span>PIXEL PÉRIL</span><br>
+            Créé avec <span>GODOT ENGINE</span> par <span>DAHORD</span><br>
+            Jeu indépendant développé avec passion <span style="font-size: 1.5rem;">♥</span>
         </div>
     </footer>
 
@@ -803,22 +816,24 @@
         document.getElementById('downloadWindows').addEventListener('click', function(e) {
             e.preventDefault();
             // Remplace par ton lien de téléchargement
-            const downloadUrl = 'pixel_peril_windows.zip';
+            const downloadUrl = './windows-download/pixel-peril.exe';
             
             if (confirm('▼ TÉLÉCHARGER PIXEL PÉRIL POUR WINDOWS ?')) {
-                // window.location.href = downloadUrl;
-                alert('⚠ Configurez le lien de téléchargement Windows dans le code');
+                if (confirm('⚠ Voulez vous vraiment télécharger la version Windows ?')) {
+                    window.location.href = downloadUrl;
+                }
             }
         });
 
         document.getElementById('downloadAndroid').addEventListener('click', function(e) {
             e.preventDefault();
             // Remplace par ton lien de téléchargement
-            const downloadUrl = 'pixel_peril.apk';
+            const downloadUrl = './android-download/pixel-peril.apk';
             
             if (confirm('▼ TÉLÉCHARGER PIXEL PÉRIL POUR ANDROID ?')) {
-                // window.location.href = downloadUrl;
-                alert('⚠ Configurez le lien de téléchargement Android dans le code');
+                if (confirm('⚠ Voulez vous vraiment télécharger la version Android ?\nCe fichier APK est sûr et signé :\n/android-download/pixel-peril.apk.idsign')) {
+                    window.location.href = downloadUrl;
+                }
             }
         });
 
